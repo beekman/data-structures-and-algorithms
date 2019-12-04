@@ -24,4 +24,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 ## Approach & Efficiency
 
 ## Solution
-https://user-images.githubusercontent.com/563233/70119153-87b77a80-161e-11ea-8a37-5acc2ba91303.jpeg
+https://user-images.githubusercontent.com/563233/70119313-dbc25f00-161e-11ea-8978-cfcb824495b8.JPG
