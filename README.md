@@ -13,7 +13,7 @@ I sorted the array in place, using Math.floor to avoid an edge case where the tw
 
 ## Solution
 My whiteboard image only shows the first part of the solution I came up with, because I ended up working on this after hours at home (where I have no whiteboard). I'll make sure my whiteboarding is more detailed for future code challenges.
-![Array Reverse Whiteboard](https://github.com/beekman/data-structures-and-algorithms/blob/array-reverse/arrayReverse/array-reverse.jpeg "Array Reverse Whiteboard")
+![Array Reverse Whiteboard](https://user-images.githubusercontent.com/563233/70119153-87b77a80-161e-11ea-8a37-5acc2ba91303.jpeg "Array Reverse Whiteboard")
 npm
 # Shift Array
 ## Challenge
@@ -24,3 +24,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 ## Approach & Efficiency
 
 ## Solution
+https://user-images.githubusercontent.com/563233/70119153-87b77a80-161e-11ea-8a37-5acc2ba91303.jpeg
