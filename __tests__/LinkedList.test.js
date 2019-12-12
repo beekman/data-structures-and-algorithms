@@ -38,7 +38,6 @@ describe('insertBefore function', () => {
     linkedList.append(3),
     linkedList.insert(2),
     linkedList.insertBefore(3, 1);
-    console.log(linkedList.toString());
     expect(linkedList.toString()).toEqual('2 -> 1 -> 3');
   });
 });
@@ -49,7 +48,6 @@ describe('insertAfter function', () => {
     linkedList.append(3),
     linkedList.insert(2),
     linkedList.insertAfter(2, 1);
-    console.log(linkedList.toString());
     expect(linkedList.toString()).toEqual('2 -> 1 -> 3');
   });
 });
