@@ -51,3 +51,16 @@ describe('insertAfter function', () => {
     expect(linkedList.toString()).toEqual('2 -> 1 -> 3');
   });
 });
+
+describe('kth-from-end function', () => {
+  it('should append a new Node with a given value at the end of the list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(3),
+    linkedList.insert(2),
+    linkedList.insert(1);
+    linkedList.insertBefore(0);
+
+    expect(linkedList.kthFromEnd(0)).toEqual('3');
+    expect(linkedList.kthFromEnd(-1)).toEqual('3');
+  });
+});
