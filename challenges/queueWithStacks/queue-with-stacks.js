@@ -10,7 +10,7 @@ class PseudoQueue {
     this.enqueueStack.push(value);
   }
   dequeue() {
-    while(this.enqueueStack.peek() !== null) {
+    while(this.enqueueStack.peek() != null) {
       this.dequeueStack.push(this.enqueueStack.pop());
     }
     return this.dequeueStack.pop();
@@ -38,7 +38,7 @@ class Stack {
 
     const top = this.top;
     this.top = top.next;
-    return top;
+    return top.value;
   }
 
   peek() {
@@ -51,4 +51,4 @@ class Stack {
   }
 }
 
-module.exports = { PseudoQueue };
+module.exports = { PseudoQueue, Stack, Node };
