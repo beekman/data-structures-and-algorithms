@@ -62,10 +62,10 @@ class LinkedList {
 
   insertBefore(value, newVal) {
     let insertedNode = new Node(newVal);
-
+    let current = this.head;
     if(this.head) {
-      let current = this.head;
-      while(current.next !== value) {
+      // let current = this.head;
+      while(current.next.value !== value) {
         current = current.next;
       }
       insertedNode.next = current.next;
