@@ -1,4 +1,4 @@
-export function reverseArray(arr) {
+function reverseArray(arr) {
   for(let i = 0;i <= Math.floor((arr.length - 1) / 2);i++) {
     let el = arr[i];
     arr[i] = arr[arr.length - 1 - i];
@@ -6,3 +6,5 @@ export function reverseArray(arr) {
   }
   return arr;
 }
+
+module.exports = { reverseArray };
