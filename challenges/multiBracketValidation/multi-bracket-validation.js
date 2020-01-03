@@ -1,27 +1,28 @@
 const multiBracketValidation = (input) => {
-  var tokens = [['{', '}'], ['[', ']'], ['(', ')']];
+  var parenTokens = [['{', '}'], ['[', ']'], ['(', ')']];
   if(input === null) return true;
 
   var stringBeingTested = input.split('');
   var stack = [];
+  var isValid = true;
   for(var i = 0;i < stringBeingTested.length;i++) {
-    if(isParenthesis(stringBeingTested[i])) {
-      if(isOpenParenthesis(stringBeingTested[i])) {
+    if(isParens(stringBeingTested[i])) {
+      if(isOpenParens(stringBeingTested[i])) {
         stack.push(stringBeingTested[i]);
       } else {
         if(stack.length === 0) {
-          return false;
+          isValid = false;
         }
         var top = stack.pop(); // pop off the top element from stack
         if(!matches(top, stringBeingTested[i])) {
-          return false;
+          isValid = false;
         }
       }
     }
-
   }
 
-  function isParenthesis(char) {
+
+  function isParens(char) {
     var str = '{}[]()';
     if(str.indexOf(char) > -1) {
       return true;
@@ -30,9 +31,9 @@ const multiBracketValidation = (input) => {
     }
   }
 
-  function isOpenParenthesis(parenthesisChar) {
-    for(var j = 0;j < tokens.length;j++) {
-      if(tokens[j][0] === parenthesisChar) {
+  function isOpenParens(parensChar) {
+    for(var j = 0;j < parenTokens.length;j++) {
+      if(parenTokens[j][0] === parensChar) {
         return true;
       }
     }
@@ -40,14 +41,16 @@ const multiBracketValidation = (input) => {
   }
 
   function matches(topOfStack, closedParenthesis) {
-    for(var k = 0;k < tokens.length;k++) {
-      if(tokens[k][0] === topOfStack &&
-        tokens[k][1] === closedParenthesis) {
+    for(var k = 0;k < parenTokens.length;k++) {
+      if(parenTokens[k][0] === topOfStack &&
+        parenTokens[k][1] === closedParenthesis) {
         return true;
       }
     }
     return false;
   }
+
+  return isValid;
 };
 
 
