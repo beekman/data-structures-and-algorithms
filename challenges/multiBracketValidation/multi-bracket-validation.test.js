@@ -1,3 +1,1 @@
-const multiBracketValidation = require { './multi-bracket-validation.js' } = (input) => {
-
-};
+const { multiBracketValidation } = require('./multi-bracket-validation.js');
