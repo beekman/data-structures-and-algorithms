@@ -1,47 +1,126 @@
-const { Stack } = require('../queueWithStacks/queue-with-stacks');
+/* A linked list has constant O(1) retrievals at the front of the list. To get constant additions, we'll have to keep a pointer with the location of the tail, otherwise we have to traverse the list in O(n).
+*/
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
 
-class AnimalShelter {
-  constructor() {
-    this.dogQueue = new Stack();
-    this.catQueue = new Stack();
+function LinkedList() {
+  this.head = null;
+  this.tail = null;
+}
+
+LinkedList.prototype.enqueue = function(nodeToAdd) {
+
+  // Add the node to the head if non-existant
+  if(this.head === null) {
+    this.head = nodeToAdd;
+  }
+  // Now update the tail pointer -- This gets us constant insertion time
+  if(this.tail === null) {
+    this.tail = nodeToAdd;
+  } else {
+    this.tail.next = nodeToAdd;
+    this.tail = nodeToAdd;
+  }
+};
+
+LinkedList.prototype.dequeue = function() {
+
+  if(this.head === null) {
+    throw new Error('Nothing to dequeue');
+  }
+  // Grab the head node and update since it's first in the list
+  var frontNode = this.head;
+  this.head = this.head.next;
+
+  return frontNode;
+};
+
+LinkedList.prototype.peek = function() {
+  return this.head;
+};
+
+
+LinkedList.prototype.printValues = function() {
+  var currentNode = this.head;
+  while(currentNode) {
+    // console.log(currentNode.value);
+    currentNode = currentNode.next;
+  }
+};
+
+
+/* Keep track of the order animals are received.  */
+
+function AnimalQueue() {
+  this.catList = new LinkedList();
+  this.dogList = new LinkedList();
+}
+// We create child Node classes for dogs and cats so we can differentiate which list to add to when we call addAnimal
+function Cat(value) {
+  Node.call(this, value);
+  this.received = new Date();
+}
+
+function Dog(value) {
+  Node.call(this, value);
+  this.received = new Date();
+}
+
+AnimalQueue.prototype.addAnimal = function(animal) {
+
+  if(animal instanceof Cat) {
+    this.catList.enqueue(animal);
+  } else if(animal instanceof Dog) {
+    this.dogList.enqueue(animal);
   }
 
-  enqueue(Animal) {
-    if(Animal.type === 'Dog') {
-      this.dogQueue.push(Animal);
-    } else if(Animal.type === 'Cat') {
-      this.catQueue.push(Animal);
+};
+
+AnimalQueue.prototype.getDog = function() {
+  // Return the first entry in the dog list and shift the head over
+  var nextDog = this.dogList.head;
+  if(nextDog === null) {
+    throw new Error('Sorry all dogs have been adopted');
+  }
+  this.dogList.head = this.dogList.head.next;
+  nextDog.next = null;
+  return nextDog;
+};
+
+AnimalQueue.prototype.getCat = function() {
+  var nextCat = this.catList.head;
+  if(nextCat === null) {
+    throw new Error('Sorry all cats have been adopted');
+  }
+  this.catList.head = this.catList.head.next;
+  nextCat.next = null;
+  return nextCat;
+};
+
+AnimalQueue.prototype.getEither = function() {
+  // We'll have to look at the first dog and cat to see which is first
+  // Convert to a numeric value with getTime to compare times
+  var nextCat = this.catList.peek();
+  var nextDog = this.dogList.peek();
+
+  // Conditionals added to determine if one list is empty, alternately we could throw an error
+  if(nextCat && nextDog) {
+
+    if(nextCat.received.getTime() < nextDog.received.getTime()) {
+      return this.getCat();
+    } else {
+      return this.getDog();
+    }
+  } else {
+    if(nextCat) {
+      return this.getCat();
+    } else if(nextDog) {
+      return this.getDog();
     }
   }
+  throw new Error('No cats or dogs to adopt right now');
+};
 
-  dequeue(Animal) {
-    if(Animal.type === 'Dog') {
-      this.dogQueue.pop(Animal);
-    } else if(Animal.type === 'Cat') {
-      this.catQueue.pop(Animal);
-    }
-  }
-}
-
-class Animal {
-  constructor(name, type) {
-    this.name = name;
-    this.type = type;
-  }
-}
-
-class Cat extends Animal {
-  constructor(name) {
-    super(name);
-    this.type = 'Cat';
-  }
-}
-
-class Dog extends Animal {
-  constructor(name) {
-    super(name);
-    this.type = 'Dog';
-  }
-}
-
-module.exports = { Animal, Cat, Dog, AnimalShelter };
+module.exports = { AnimalQueue, LinkedList, Cat, Dog, Node };
