@@ -1,4 +1,4 @@
-const { AnimalQueue, Node, LinkedList, Dog, Cat } = require('./fifo-animal-shelter');
+const { AnimalQueue, Dog, Cat } = require('./fifo-animal-shelter');
 
 describe('AnimalShelter class', () => {
   it('getEither should return the first animal of either type', () => {
@@ -9,12 +9,6 @@ describe('AnimalShelter class', () => {
     vet.addAnimal(felix);
     expect(vet.getEither().value).toEqual('Spot');
     expect(vet.getEither().value).toEqual('Felix');
-    // let shop = new AnimalQueue();
-    // const garfield = new Cat('Garfield');
-    // const odie = new Dog('Odie');
-    // shop.addAnimal(garfield);
-    // shop.addAnimal(odie);
-    // expect(shop.getEither().value).toEqual('Garfield');
   });
 
   it('getEither should return the only animal if there is only one', () => {
