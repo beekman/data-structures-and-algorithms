@@ -3,8 +3,8 @@ const { LinkedList } = require('../challenges/linkedList/LinkedList');
 describe('should return true if a value exists within a linked list', () => {
   it('should append a new Node with a given value at the end of the list', () => {
     const linkedList = new LinkedList();
-    linkedList.insert(3),
-    linkedList.insert(2),
+    linkedList.insert(3);
+    linkedList.insert(2);
     linkedList.insert(1);
 
     expect(linkedList.includes(2)).toEqual(true);
@@ -23,8 +23,8 @@ describe('toString function', () => {
 describe('append function', () => {
   it('should append a new Node with a given value at the end of the list', () => {
     const linkedList = new LinkedList();
-    linkedList.append(3),
-    linkedList.insert(2),
+    linkedList.append(3);
+    linkedList.insert(2);
     linkedList.insert(1);
     linkedList.append(0);
 
@@ -35,8 +35,8 @@ describe('append function', () => {
 describe('insertBefore function', () => {
   it('should allow you to insert a value before a specified value in a LinkedList', () => {
     const linkedList = new LinkedList();
-    linkedList.append(3),
-    linkedList.insert(2),
+    linkedList.append(3);
+    linkedList.insert(2);
     linkedList.insertBefore(3, 1);
     expect(linkedList.toString()).toEqual('2 -> 1 -> 3');
   });
@@ -45,9 +45,21 @@ describe('insertBefore function', () => {
 describe('insertAfter function', () => {
   it('should allow you to insert a value before a specified value in a LinkedList', () => {
     const linkedList = new LinkedList();
-    linkedList.append(3),
-    linkedList.insert(2),
+    linkedList.append(3);
+    linkedList.insert(2);
     linkedList.insertAfter(2, 1);
     expect(linkedList.toString()).toEqual('2 -> 1 -> 3');
+  });
+});
+
+describe('kth-from-end function', () => {
+  it('should append a new Node with a given value at the end of the list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(3);
+    linkedList.insert(2);
+    linkedList.insert(1);
+
+    expect(linkedList.kthFromEnd(0)).toEqual(3);
+    expect(linkedList.kthFromEnd(-1)).toEqual('Exception');
   });
 });

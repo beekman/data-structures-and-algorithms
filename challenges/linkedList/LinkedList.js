@@ -1,3 +1,4 @@
+const { reverseArray } = require('../arrayReverse/array-reverse');
 class Node {
   constructor(val, next = null) {
     this.value = val;
@@ -63,13 +64,42 @@ class LinkedList {
   insertBefore(value, newVal) {
     let insertedNode = new Node(newVal);
     let current = this.head;
-
-    while(current.next.value !== value) {
-      current = current.next;
+    if(this.head) {
+      while(current.next.value !== value) {
+        current = current.next;
+      }
+      insertedNode.next = current.next;
+      current.next = insertedNode;
     }
-    insertedNode.next = current.next;
-    current.next = insertedNode;
+    else return 'Exception';
   }
 
+  getLength() {
+    let nodeCount = 0;
+    let current = this.head;
+    if(this.head) {
+      nodeCount++;
+      while(current.next) {
+        this.value = current.next;
+        nodeCount++;
+      }
+    }
+    return nodeCount;
+  }
+
+  kthFromEnd(k) {
+    const listArray = [];
+    let current = this.head;
+
+    if(Math.sign(k) === -1 || !current) return 'Exception';
+
+    while(current) {
+      listArray.push(current.value);
+      current = current.next;
+    }
+
+    if(k > listArray.length) return 'Exception';
+    return reverseArray(listArray)[k];
+  }
 }
 module.exports = { LinkedList };
