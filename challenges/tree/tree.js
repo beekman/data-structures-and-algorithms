@@ -35,13 +35,12 @@ const preOrder = (Node) => {
   }
 };
 
-const postOrder(Node) {
+const postOrder = (Node) => {
   if(!(Node == null)) {
     postOrder(Node.left);
     postOrder(Node.right);
-    console.log(Node.show() + " ");
+    console.log(Node.show() + ' ');
   }
 };
-
 
 module.exports = { Node, Tree, inOrder };
