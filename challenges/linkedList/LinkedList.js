@@ -70,6 +70,6 @@ class LinkedList {
     insertedNode.next = current.next;
     current.next = insertedNode;
   }
-}
 
+}
 module.exports = { LinkedList };
