@@ -7,6 +7,7 @@ class Node {
     this.show = show;
   }
 }
+
 const show = () => {
   return this.value;
 };
@@ -43,4 +44,4 @@ const postOrder = (Node) => {
   }
 };
 
-module.exports = { Node, Tree, inOrder };
+module.exports = { Node, Tree, inOrder, postOrder, preOrder };
