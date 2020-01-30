@@ -1,4 +1,3 @@
-
 class Node {
   constructor(val, leftChild, rightChild = null) {
     this.value = val;
@@ -59,14 +58,14 @@ class Tree {
       return;
     }
 
-    let _insert = (node) => {
+    let _add = (node) => {
       if(value < node.value) {
 
         if(node.left === null) {
           node.left = new Node(value);
           return;
         } else if(node.left !== null) {
-          return _insert(node.left);
+          return _add(node.left);
         }
 
       } else if(value >= node.value) {
@@ -75,14 +74,14 @@ class Tree {
           node.right = new Node(value);
           return;
         } else if(node.right !== null) {
-          return _insert(node.right);
+          return _add(node.right);
         }
 
       } else {
         return null;
       }
     };
-    _insert(node);
+    _add(node);
   }
 }
 
