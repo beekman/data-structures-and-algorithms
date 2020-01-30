@@ -6,7 +6,7 @@ let makeTree = () => {
   const L = new Node(3);
   const R = new Node(6);
   const LL = new Node(3);
-  const LR = new Node(2);
+  const LR = new Node(15);
   const LRL = new Node(150);
   const RL = new Node(9);
   const RR = new Node(15);
