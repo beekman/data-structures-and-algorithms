@@ -1,8 +1,8 @@
 class Node {
-  constructor(val, leftChild, rightChild = null) {
-    this.value = val;
-    this.left = leftChild;
-    this.right = rightChild;
+  constructor(value, left, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
   }
 }
 class Tree {
@@ -14,12 +14,12 @@ class Tree {
   inOrder() {
     let results = [];
 
-    let _walk = (node) => {
-      if(node.left) { _walk(node.left); }
-      results.push(node.value);
-      if(node.right) { _walk(node.right); }
+    let crawlTree = (Node) => {
+      if(Node.left) { crawlTree(Node.left); }
+      results.push(Node.value);
+      if(Node.right) { crawlTree(Node.right); }
     };
-    _walk(this.root);
+    crawlTree(this.root);
 
     return results.toString();
   }
@@ -27,12 +27,12 @@ class Tree {
   preOrder() {
     let results = [];
 
-    let _walk = (node) => {
-      results.push(node.value);
-      if(node.left) { _walk(node.left); }
-      if(node.right) { _walk(node.right); }
+    let crawlTree = (Node) => {
+      results.push(Node.value);
+      if(Node.left) { crawlTree(Node.left); }
+      if(Node.right) { crawlTree(Node.right); }
     };
-    _walk(this.root);
+    crawlTree(this.root);
 
     return results.toString();
   }
@@ -40,48 +40,48 @@ class Tree {
   postOrder() {
     let results = [];
 
-    let _walk = (node) => {
-      if(node.left) { _walk(node.left); }
-      if(node.right) { _walk(node.right); }
-      results.push(node.value);
+    let crawlTree = (Node) => {
+      if(Node.left) { crawlTree(Node.left); }
+      if(Node.right) { crawlTree(Node.right); }
+      results.push(Node.value);
     };
-    _walk(this.root);
+    crawlTree(this.root);
 
     return results.toString();
   }
   add(value) {
 
-    const node = this.root;
+    const Node = this.root;
 
-    if(!node) {
+    if(!Node) {
       this.root = new Node(value);
       return;
     }
 
-    let _add = (node) => {
-      if(value < node.value) {
+    let _add = (Node) => {
+      if(value < Node.value) {
 
-        if(node.left === null) {
-          node.left = new Node(value);
+        if(Node.left === null) {
+          Node.left = new Node(value);
           return;
-        } else if(node.left !== null) {
-          return _add(node.left);
+        } else if(Node.left !== null) {
+          return _add(Node.left);
         }
 
-      } else if(value >= node.value) {
+      } else if(value >= Node.value) {
 
-        if(node.right === null) {
-          node.right = new Node(value);
+        if(Node.right === null) {
+          Node.right = new Node(value);
           return;
-        } else if(node.right !== null) {
-          return _add(node.right);
+        } else if(Node.right !== null) {
+          return _add(Node.right);
         }
 
       } else {
         return null;
       }
     };
-    _add(node);
+    _add(Node);
   }
 }
 
