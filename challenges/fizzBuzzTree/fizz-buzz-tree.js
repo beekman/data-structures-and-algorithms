@@ -1,5 +1,4 @@
-const fizzBuzzTree = (Tree) => {
-
+module.exports = function fizzBuzzTree(Tree) {
   let crawlTree = (Node) => {
     if(Node.left) { crawlTree(Node.left); }
 
@@ -11,8 +10,5 @@ const fizzBuzzTree = (Tree) => {
   };
 
   crawlTree(Tree.root);
-
   return Tree;
 };
-
-module.exports = { fizzBuzzTree };

@@ -1,5 +1,5 @@
 const { Tree, Node } = require('../challenges/tree/tree');
-const fizzBuzzTree = require('../challenges/fizzBuzzTree/fizz-buzz-tree');
+let fizzBuzzTree = require('../challenges/fizzBuzzTree/fizz-buzz-tree.js');
 
 let makeTree = () => {
   const root = new Node(4);
@@ -12,7 +12,7 @@ let makeTree = () => {
   const RR = new Node(15);
   const RRR = new Node(27);
 
-  const Tree = new Tree(root);
+  const tree = new Tree(root);
 
   root.left = L;
   root.right = R;
@@ -23,7 +23,7 @@ let makeTree = () => {
   R.left = RL;
   RR.R = RRR;
 
-  return Tree;
+  return tree;
 
 };
 
