@@ -12,6 +12,7 @@ function BreadthFirstSearch(root) {
     if(current.left !== null) {
       queue.enqueue(current.left);
     }
+    
     if(current.right !== null) {
       queue.enqueue(current.right);
     }
