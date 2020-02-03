@@ -1,10 +1,11 @@
-import { Queue } from '../queueWithStacks/queue';
+let { PseudoQueue } = require ('../queueWithStacks/queue-with-stacks');
+
 function BreadthFirstSearch(root) {
   if(root === null) {
     return;
   }
-  var queue = new Queue;
-  queue.push(root);
+  let queue = new PseudoQueue();
+  queue.enqueue(root);
 
   while(queue.length > 0) {
     var current = queue[0];
@@ -12,12 +13,11 @@ function BreadthFirstSearch(root) {
     if(current.left !== null) {
       queue.enqueue(current.left);
     }
-    
+
     if(current.right !== null) {
       queue.enqueue(current.right);
     }
     queue.dequeue();
   }
 }
-
-export default BreadthFirstSearch;
+module.exports = { BreadthFirstSearch };
