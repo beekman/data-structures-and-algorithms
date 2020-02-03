@@ -23,8 +23,9 @@ let makeTree = () => {
 };
 
 describe('Breadth First Tree', () => {
-  it('When given a tree it should return an array listing the elements on each level from left to right', () => {
+
+  it('should return an array of all visited nodes', () => {
     let tree = makeTree();
-    BreadthFirstSearch(tree);
+    expect(BreadthFirstSearch(tree)).toEqual([3, 4, 6, 3, 15, 9, 21]);
   });
 });

@@ -5,6 +5,7 @@ function BreadthFirstSearch(root) {
     return;
   }
   let queue = new PseudoQueue();
+  let crawled = new PseudoQueue();
   queue.enqueue(root);
 
   while(queue.length > 0) {
@@ -17,7 +18,8 @@ function BreadthFirstSearch(root) {
     if(current.right !== null) {
       queue.enqueue(current.right);
     }
-    queue.dequeue();
+    crawled.enqueue(queue.dequeue());
   }
+  return crawled;
 }
 module.exports = { BreadthFirstSearch };
