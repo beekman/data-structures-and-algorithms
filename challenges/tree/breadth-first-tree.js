@@ -18,7 +18,8 @@ function BreadthFirstSearch(root) {
     if(current.right !== null) {
       queue.enqueue(current.right);
     }
-    crawled.enqueue(queue.dequeue());
+    
+    console.log(queue.dequeue());
   }
   return crawled;
 }
