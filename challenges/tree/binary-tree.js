@@ -42,17 +42,4 @@ module.exports = class BinaryTree {
 
     return results.toString();
   }
-
-  findMaximumValue() {
-    let currentMax;
-    let _walk = (node) => {
-      if(node.left) { _walk(node.left); }
-      if(node.right) { _walk(node.right); }
-      if((node.value) > currentMax) {
-        node.value = currentMax;
-      }
-    };
-    _walk(this.root);
-    return currentMax;
-  }
 };
