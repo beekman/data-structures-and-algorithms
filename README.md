@@ -30,14 +30,15 @@ Write a function called insertShiftArray which takes in an array and the value t
 [Code solution](challenges/arrayShift)
 ![Array Shift Whiteboard](https://user-images.githubusercontent.com/563233/70119313-dbc25f00-161e-11ea-8978-cfcb824495b8.JPG)
 
-## [Queue With Stacks](challenges/queueWithStacks)
+(Links and descriptions for remaining challenges will be added shortly)
+## [Queue With Stacks](/challenges/queueWithStacks)
 
-## [Animal Shelter](challenges/fifoAnimalShelter)
+## [Animal Shelter](/challenges/fifoAnimalShelter)
 
-## [Binary Search](challenges/arrayBinarySearch)
+## [Binary Search](/challenges/arrayBinarySearch)
 
-## [Linked List](challenges/linkedList)
+## [Linked List](/challenges/linkedList)
 
-## [Linked List Merge](challenges/llMerge)
+## [Linked List Merge](/challenges/llMerge)
 
-## [Multi-Bracked Validation](challenges/multiBracketValidation)
+## [Multi-Bracked Validation](/challenges/multiBracketValidation)
