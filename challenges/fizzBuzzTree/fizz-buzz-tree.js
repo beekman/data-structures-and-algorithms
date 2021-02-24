@@ -12,3 +12,5 @@ module.exports = function fizzBuzzTree(Tree) {
   crawlTree(Tree.root);
   return Tree;
 };
+
+find(data)
