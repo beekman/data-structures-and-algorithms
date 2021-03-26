@@ -30,7 +30,8 @@ Write a function called insertShiftArray which takes in an array and the value t
 [Code solution](challenges/arrayShift)
 ![Array Shift Whiteboard](https://user-images.githubusercontent.com/563233/70119313-dbc25f00-161e-11ea-8978-cfcb824495b8.JPG)
 
-(Links and descriptions for remaining challenges will be added shortly)
+# Index of my solutions for coding challenges
+
 ## [Queue With Stacks](/challenges/queueWithStacks)
 
 ## [Animal Shelter](/challenges/fifoAnimalShelter)
@@ -41,4 +42,12 @@ Write a function called insertShiftArray which takes in an array and the value t
 
 ## [Linked List Merge](/challenges/llMerge)
 
-## [Multi-Bracked Validation](/challenges/multiBracketValidation)
+## [Multi-Bracket Validation](/challenges/multiBracketValidation)
+
+## [First Non-Repeating Letter](/challenges/firstNonRepeatingLetter)
+
+## [Pick Peaks](/challenges/pick-peaks/pickPeaks.js)
+
+## [Maximum and Minimum Differences](/challenges/maxAndMin/maxAndMin.js)
+
+## [Maximum and Minimum Values](/challenges/maxAndMin/maxAndMin.js)
