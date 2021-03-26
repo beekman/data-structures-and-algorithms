@@ -1,7 +1,7 @@
 # Data Structures and Algorithms
 My solutions for many coding challenges related to data structures and algorithms. Some problems come from Cracking the Coding Interview by Gayle Laakmann McDowell](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850). Other problems come from codewars.com, leetcode.com, and other sources.
 
-# My DSNA Solution Index
+# DSNA Solution Index
 
 ## [Reverse an Array](/challenges/arrayReverse/)
 
@@ -19,8 +19,20 @@ My solutions for many coding challenges related to data structures and algorithm
 
 ## [First Non-Repeating Letter](/challenges/firstNonRepeatingLetter)
 
-## [Pick Peaks](/challenges/pick-peaks/pickPeaks.js)
+## [Pick Peaks](/challenges/pick-peaks)
 
-## [Maximum and Minimum Differences](/challenges/maxAndMin/maxAndMin.js)
+## [Maximum and Minimum Differences](/challenges/maxAndMin)
 
-## [Maximum and Minimum Values](/challenges/maxAndMin/maxAndMin.js)
+## [Maximum and Minimum Values](/challenges/maxAndMin)
+
+## [ROT13](/challenges/rot13)
+
+## [Spin Words](/challenges/spin-words)
+
+## [Vaccine Nation](/challenges/vaccine-nation)
+
+## [Who Is the Killer?](/challenges/who-is-the-killer)
+
+## [Who Likes It](/challenges/who-likes-it)
+
+## [Count Bits](/challenges/count-bits)
