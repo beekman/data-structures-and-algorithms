@@ -1,5 +1,5 @@
 # Data Structures and Algorithms
-My solutions for many coding challenges related to data structures and algorithms. Some problems come from Cracking the Coding Interview by Gayle Laakmann McDowell](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850). Other problems come from codewars.com, leetcode.com, and other sources.
+My solutions for many coding challenges related to data structures and algorithms. Some problems come from [Cracking the Coding Interview by Gayle Laakmann McDowell](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850). I encountered the rest of these problems on codewars.com, leetcode.com, and similar sites.
 
 # DSNA Solution Index
 
