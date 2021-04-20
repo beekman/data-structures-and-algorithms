@@ -13,9 +13,7 @@ If the input or the result is an empty string it must return false.
 function generateHashtag(str) {
   let wordArray = str.split(' ').filter(char => char !== '');
 
-  if(wordArray.length === 0) {
-    return false;
-  };
+  if(wordArray.length === 0) return false;
 
   let hashtag = '#';
   hashtag = hashtag + wordArray.map(word => {
