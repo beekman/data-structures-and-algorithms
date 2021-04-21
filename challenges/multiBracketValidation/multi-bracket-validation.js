@@ -5,7 +5,7 @@ const multiBracketValidation = (input) => {
   var stringBeingTested = input.split('');
   var stack = [];
   var isValid = true;
-  for(var i = 0;i < stringBeingTested.length;i++) {
+  for(var i = 0; i < stringBeingTested.length; i++) {
     if(isParens(stringBeingTested[i])) {
       if(isOpenParens(stringBeingTested[i])) {
         stack.push(stringBeingTested[i]);
@@ -32,7 +32,7 @@ const multiBracketValidation = (input) => {
   }
 
   function isOpenParens(parensChar) {
-    for(var j = 0;j < parenTokens.length;j++) {
+    for(var j = 0; j < parenTokens.length; j++) {
       if(parenTokens[j][0] === parensChar) {
         return true;
       }
@@ -41,7 +41,7 @@ const multiBracketValidation = (input) => {
   }
 
   function matches(topOfStack, closedParenthesis) {
-    for(var k = 0;k < parenTokens.length;k++) {
+    for(var k = 0; k < parenTokens.length; k++) {
       if(parenTokens[k][0] === topOfStack &&
         parenTokens[k][1] === closedParenthesis) {
         return true;
@@ -52,7 +52,5 @@ const multiBracketValidation = (input) => {
 
   return isValid;
 };
-
-
 
 module.exports = { multiBracketValidation };

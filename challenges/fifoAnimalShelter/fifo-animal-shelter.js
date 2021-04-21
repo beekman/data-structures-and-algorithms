@@ -45,7 +45,6 @@ LinkedList.prototype.peek = function() {
 LinkedList.prototype.printValues = function() {
   var currentNode = this.head;
   while(currentNode) {
-    // console.log(currentNode.value);
     currentNode = currentNode.next;
   }
 };

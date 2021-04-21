@@ -18,7 +18,7 @@ input     ('40 months', '12 months', 'october')
 output    ['hibMenC', 'measlesMumpsRubella', 'meningitisB', 'offer fluVaccine', 'preSchoolBooster']
 */
 
-function vaccineList(age, status, month) {
+export function vaccineList(age, status, month) {
   let vaccineSet = new Set;
   const vaccinationsKeys = Object.keys(vaccinationsList);
   vaccinationsKeys.forEach(vaxKey => {
@@ -29,7 +29,7 @@ function vaccineList(age, status, month) {
     if(vaccinationsList[vaxKey].includes(status)) {
       vaccineSet.add(vaxKey);
     }
-    if((month == 'september') || (month == 'october') || (month == 'november')) {
+    if((month === 'september') || (month === 'october') || (month === 'november')) {
       vaccineSet.add('offer fluVaccine');
     }
   });

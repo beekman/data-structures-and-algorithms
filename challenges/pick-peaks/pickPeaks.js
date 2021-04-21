@@ -1,5 +1,5 @@
 /*
-In this kata, you will write a function that returns the positions and the values of the "peaks" (or local maxima) of a numeric array.
+Write a function that returns the positions and the values of the "peaks" (or local maxima) of a numeric array.
 
 For example, the array arr = [0, 1, 2, 5, 1, 0] has a peak at position 3 with a value of 5 (since arr[3] equals 5).
 

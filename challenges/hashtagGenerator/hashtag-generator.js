@@ -10,7 +10,7 @@ If the final result is longer than 140 chars it must return false.
 If the input or the result is an empty string it must return false.
 */
 
-function generateHashtag(str) {
+export function generateHashtag(str) {
   let wordArray = str.split(' ').filter(char => char !== '');
 
   if(wordArray.length === 0) return false;

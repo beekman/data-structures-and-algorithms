@@ -14,7 +14,7 @@ and also a list of the names of the dead people:
 return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
 */
 
-const killer = (suspectInfo, dead) => {
+export const killer = (suspectInfo, dead) => {
   const suspects = Object.keys(suspectInfo);
   let killer = '';
   suspects.forEach(suspect => {
