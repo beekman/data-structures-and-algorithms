@@ -1,4 +1,4 @@
-export function maxAndMin(arr1, arr2) {
+export function maxAndMinDifferences(arr1, arr2) {
   arr1.sort((a, b) => a - b);
   arr2.sort((a, b) => a - b);
 

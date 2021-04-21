@@ -1,5 +1,5 @@
 # Data Structures and Algorithms
-My solutions for many coding challenges related to data structures and algorithms. Some problems come from [Cracking the Coding Interview by Gayle Laakmann McDowell](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850). I encountered the rest of these problems on codewars.com, leetcode.com, and similar sites.
+My solutions for many coding challenges related to data structures and algorithms. I encountered some of these problems in [Cracking the Coding Interview by Gayle Laakmann McDowell](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850). The rest of these problems are code challenges from [codewars.com](https://codewars.com).
 
 # DSNA Solution Index
 
@@ -21,9 +21,7 @@ My solutions for many coding challenges related to data structures and algorithm
 
 ## [Pick Peaks](/challenges/pick-peaks)
 
-## [Maximum and Minimum Differences](/challenges/maxAndMin)
-
-## [Maximum and Minimum Values](/challenges/maxAndMin)
+## [Maximum and Minimum Differences](/challenges/maxAndMinDifferences)
 
 ## [ROT13](/challenges/rot13)
 
