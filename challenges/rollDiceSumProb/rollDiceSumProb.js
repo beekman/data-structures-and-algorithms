@@ -37,17 +37,18 @@ And think why we have this result:
 rolldice_sum_prob(22, 3) == 0
 Create the function rolldice_sum_prob() for this calculation.
 */
-function rolldiceSumProb(arr) {
-  let prob = [...Array(6)].map(v => (rollDie()));
-  for(let i = 0; i < arr.length; i++) {
+function rolldiceSumProb(value, numDice) {
+  let prob = [...Array(numDice)].map(v => (rollDie()));
+  for(let i = 0; i < prob.length; i++) {
     prob[i] = (rollDie());
   }
   console.log(prob);
-  return arr;
+  return prob;
 }
 
 function rollDie() {
   return 1 + Math.floor(Math.random() * 6);
 }
 
+console.log(rolldiceSumProb(11, 2));
 export default { rolldiceSumProb };

@@ -28,5 +28,6 @@
   "keywords": [],
   "dependencies": {
     "acorn": "7.1.1"
-  }
+  },
+  "type": "module"
 }
