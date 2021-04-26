@@ -38,6 +38,7 @@ rolldice_sum_prob(22, 3) == 0
 Create the function rolldice_sum_prob() for this calculation.
 */
 function rolldiceSumProb(value, numDice) {
+  // eslint-disable-next-line no-unused-vars
   let prob = [...Array(numDice)].map(v => (rollDie()));
   for(let i = 0; i < prob.length; i++) {
     prob[i] = (rollDie());
