@@ -19,19 +19,17 @@ Input: nums = [2,3,0,1,4]
 Output: 2
  */
 const jump = (nums) => {
-  let i = 0;
-  while(i < nums.length) {
-    let current = nums[i];
-    let best = 0;
-    for(let j = 0; j < current; j++) {
-      if(nums[j] > best) {
-        best = nums[j];
-        console.log(`spot ${i + j}=${nums[i + j]}`);
-      }
-      i = nums[i + best];
+  let now = 0;
+  let max = 0;
+  let step = 0;
+  for(let i = 0; i < nums.length - 1; i++) {
+    max = Math.max(max, i + nums[i]);
+    if(i === now) {
+      step++;
+      now = max;
     }
-    console.log(`currently on index ${current}`);
   }
+  return step;
 };
 
 let nums = [2, 3, 1, 1, 4];
