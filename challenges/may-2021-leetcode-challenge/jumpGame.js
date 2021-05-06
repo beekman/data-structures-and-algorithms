@@ -31,6 +31,3 @@ const jump = (nums) => {
   }
   return step;
 };
-
-let nums = [2, 3, 1, 1, 4];
-jump(nums);
