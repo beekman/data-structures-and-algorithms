@@ -7,10 +7,11 @@ let countPrimes = (n) => {
    let result = 0;
    for(let i = 2; i < n; i++) {
       if(unPrimes[i] === false) {
+         //if the number is marked as unPrime, add 1 to the result
          result++;
-         //mark all multiples of n up to the end of the array as unPrime
-         for(let j = 2; i * j < n; j++) {
-            unPrimes[i * j] = true;
+         // multiples of numbers below i have been computed already, so start with i*i
+         for(let j = i * i; i * j < n; j++) {
+            notPrimes[i * j] = true;
          }
       }
    }
