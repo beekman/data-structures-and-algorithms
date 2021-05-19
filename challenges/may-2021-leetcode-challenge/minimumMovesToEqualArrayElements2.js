@@ -28,9 +28,9 @@ const minMoves2 = nums => {
   nums.sort((a, b) => a - b);
 
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  const average = (nums.reduce(reducer) / nums.length);
 
-  let numMoves = 0, median = nums[~~(nums.length / 2)];
+  let numMoves = 0
+  const median = nums[~~(nums.length / 2)];
 
   const difference = (a, b) => {
     return Math.abs(a - b);
