@@ -30,6 +30,8 @@ const minMoves2 = nums => {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
   let numMoves = 0
+
+  //get the middle index, trim everything after the decimal point
   const median = nums[~~(nums.length / 2)];
 
   const difference = (a, b) => {
