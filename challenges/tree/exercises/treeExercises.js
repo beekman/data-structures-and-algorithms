@@ -1,7 +1,8 @@
 // Implement a function that sums all the values in a tree
 const sumAllValuesInTree = (root) => {
   console.log('Summed!');
-} 
+  
+}
 
 // Implements a function that averages all the values in a tree
 const averageAllValueInTree = (root) => {
