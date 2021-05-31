@@ -1,7 +1,6 @@
 /**
- * @param {string[]} words
+ * @param {number[]} nums
  * @return {number}
- *
  * Maximum Erasure Value
 You are given an array of positive integers nums and want to erase a subarray containing unique elements. The score you get by erasing the subarray is equal to the sum of its elements.
 
@@ -28,19 +27,7 @@ Constraints:
 1 <= nums.length <= 105
 1 <= nums[i] <= 104
  */
-const maxProduct = words => {
-  words.sort((a, b) => b.length - a.length);
-  let best = 0, bitsets = new Uint32Array(words.length);
-  for(let i = 0; i < words.length; i++) {
-    let word = words[i], wlen = word.length, bitset = 0;
-    if(wlen * words[0].length < best)
-      return best;
-    for(let j = 0; j < wlen; j++)
-      bitset |= 1 << (word.charCodeAt(j) - 97);
-    for(let j = 0; j < i; j++)
-      if((bitsets[j] & bitset) === 0)
-        best = Math.max(best, wlen * words[j].length);
-    bitsets[i] = bitset;
-  }
-  return best;
+
+const maximumUniqueSubarray = nums => {
+
 };
