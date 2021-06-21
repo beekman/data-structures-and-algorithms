@@ -24,13 +24,12 @@ let makeTree = () => {
   RR.R = RRR;
 
   return tree;
-
 };
 
 describe('FizzBuzz Tree', () => {
   it('When given a tree it should return "Fizz" for values divisible by 3', () => {
     let tree = makeTree();
-    fizzBuzzTree(Tree);
+    fizzBuzzTree(tree);
     expect(tree.root.left.value).toBe('Fizz');
     expect(tree.root.right.value).toBe('Fizz');
   });
