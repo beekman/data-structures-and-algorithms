@@ -24,3 +24,5 @@ const maximumGap = (nums) => {
   }
   return max;
 };
+
+module.exports = { maximumGap };

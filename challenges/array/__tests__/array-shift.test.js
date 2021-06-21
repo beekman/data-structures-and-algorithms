@@ -1,4 +1,4 @@
-const { arrayShift, arrayRemoveMiddle } = require('../../arrayShift/array-shift');
+const { arrayShift, arrayRemoveMiddle } = require('../array-shift');
 
 describe('array shift function', () => {
   it('should input a value into the middle of an array', () => {

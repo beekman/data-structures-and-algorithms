@@ -31,7 +31,7 @@ LinkedList.prototype.dequeue = function() {
     throw new Error('Nothing to dequeue');
   }
   // Grab the head node and update since it's first in the list
-  var frontNode = this.head;
+  let frontNode = this.head;
   this.head = this.head.next;
 
   return frontNode;
@@ -68,13 +68,11 @@ function Dog(value) {
 }
 
 AnimalQueue.prototype.addAnimal = function(animal) {
-
   if(animal instanceof Cat) {
     this.catList.enqueue(animal);
   } else if(animal instanceof Dog) {
     this.dogList.enqueue(animal);
   }
-
 };
 
 AnimalQueue.prototype.getDog = function() {

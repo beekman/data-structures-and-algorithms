@@ -7,3 +7,5 @@ let runningSum = (nums) => {
   });
   return totalCounts;
 };
+
+module.exports = { runningSum };

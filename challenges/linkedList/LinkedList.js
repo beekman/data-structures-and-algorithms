@@ -1,4 +1,4 @@
-const { reverseArray } = require('../arrayReverse/array-reverse');
+const { reverseArray } = require('../array/array-reverse');
 class Node {
   constructor(val, next = null) {
     this.value = val;
