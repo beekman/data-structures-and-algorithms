@@ -11,7 +11,7 @@ The first and last elements of the array will not be considered as peaks (in the
 Also, beware of plateaus !!! [1, 2, 2, 2, 1] has a peak while [1, 2, 2, 2, 3] and [1, 2, 2, 2, 2] do not. In case of a plateau-peak, please only return the position and value of the beginning of the plateau.
 For example: pickPeaks([1, 2, 2, 2, 1]) returns {pos: [1], peaks: [2]} (or equivalent in other languages)
 */
-export function pickPeaks(arr) {
+export const pickPeaks = (arr) => {
   let previous = Infinity;
   let upslope = false;
   let pos = [];
@@ -33,7 +33,6 @@ export function pickPeaks(arr) {
       upslope = false;
       previous = current;
     }
-
   }
   return { peaks: peaks, pos: pos };
-}
+};

@@ -77,7 +77,7 @@ AnimalQueue.prototype.addAnimal = function(animal) {
 
 AnimalQueue.prototype.getDog = function() {
   // Return the first entry in the dog list and shift the head over
-  var nextDog = this.dogList.head;
+  let nextDog = this.dogList.head;
   if(nextDog === null) {
     throw new Error('Sorry all dogs have been adopted');
   }

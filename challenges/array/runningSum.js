@@ -1,4 +1,4 @@
-let runningSum = (nums) => {
+const runningSum = (nums) => {
   let sum = 0;
   const totalCounts = [];
   nums.map(number => {
