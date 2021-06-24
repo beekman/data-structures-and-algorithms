@@ -8,7 +8,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-const maximumGap = (nums) => {
+const maximumGap = nums => {
   let max = 0;
   if(nums.length >= 2) {
     nums.sort((a, b) => a - b);
