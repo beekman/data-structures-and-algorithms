@@ -107,19 +107,7 @@ const getSectorNumber = (row, column) => {
   const rowSector = parseInt(row / 3);
   const columnSector = parseInt(column / 3);
 
-  let sectorNumber;
-
-  switch(`${rowSector}${columnSector}`) {
-    case '00': sectorNumber = 0; break;
-    case '01': sectorNumber = 1; break;
-    case '02': sectorNumber = 2; break;
-    case '10': sectorNumber = 3; break;
-    case '11': sectorNumber = 4; break;
-    case '12': sectorNumber = 5; break;
-    case '20': sectorNumber = 6; break;
-    case '21': sectorNumber = 7; break;
-    case '22': sectorNumber = 8; break;
-  };
-
+  // translate the two concatenated values from base3 to get a sector number ranging from 0-8.
+  let sectorNumber = parseInt(`${rowSector}${columnSector}`, 3);
   return sectorNumber;
 };
