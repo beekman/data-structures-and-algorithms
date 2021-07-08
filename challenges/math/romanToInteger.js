@@ -1,0 +1,23 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const values = {
+  "I": 1,
+  "V": 5,
+  "X": 10,
+  "L": 50,
+  "C": 100,
+  "D": 500,
+  "M": 1000
+};
+
+const romanToInt = s => {
+  let sum = 0;
+  for(i = 0; i < s.length; i++) {
+    const current = s[i];
+    const next = s[i + 1];
+    sum += values[current] < values[next] ? -values[current] : values[current];
+  };
+  return sum;
+};
