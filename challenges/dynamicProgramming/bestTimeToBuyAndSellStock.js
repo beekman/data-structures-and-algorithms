@@ -9,9 +9,8 @@ const maxProfit = prices => {
     if(prices[i] > prices[i - 1]) {
       profit = Math.max(profit, prices[i] - min);
     } else {
-      min = Math.min(min, prices[i]);;
+      min = Math.min(min, prices[i]);
     }
   }
-
   return profit;
 };
