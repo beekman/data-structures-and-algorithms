@@ -55,6 +55,3 @@ const wordBreak = s => {
   }
   return dp[s.length];
 };
-
-const wordDict = ["leet", "code"];
-console.log(wordBreak("leetcode", wordDict));
