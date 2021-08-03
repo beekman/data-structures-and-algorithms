@@ -27,7 +27,7 @@ const jump = (nums) => {
     if(i === now) {
       step++;
       now = max;
-    }
+    }55ty67r5906s
   }
   return step;
 };
