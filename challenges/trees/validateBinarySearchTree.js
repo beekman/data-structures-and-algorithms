@@ -38,20 +38,18 @@ The number of nodes in the tree is in the range [1, 104].
  * @param {TreeNode} root
  * @return {boolean}
  */
- const isValidBST = root =>  {
-        if (!root) {
-         return true;
-     }
-     const left = isValidBST(root.left);
-     const right = isValidBST(root.right);
-     if (left && right) {
-         if (root.left && root.val <= root.left.val) {
-             return false;
-         }
-         if (root.right && root.val >= root.right.val) {
-             return false;
-         }
-         return true;
-     }
-     return false;
- }
+const isValidBST = root => {
+    let results = [];
+
+    const traverse = tree => {
+        if(!tree) return null;
+        if(tree.left) traverse(tree.left);
+        results.push(tree.val);
+        if(tree.right) traverse(tree.right);
+    };
+    traverse(root);
+    for(let i = 0; i < results.length; i++) {
+        if(results[i] >= results[i + 1]) return false;
+    }
+    return true;
+};
