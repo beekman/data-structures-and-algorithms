@@ -1,4 +1,4 @@
-const { multiBracketValidation } = require('./multi-bracket-validation.js');
+const { multiBracketValidation } = require('./multiBracketValidation.js');
 
 describe('tests multi-bracket validation', () => {
   it('should accept an empty string and a null input as valid', () => {

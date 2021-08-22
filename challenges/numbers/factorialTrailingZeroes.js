@@ -1,4 +1,4 @@
-export function zeros(n) {
+const zeros = n => {
   let result = 0;
   for(let i = 5; i <= n; i += 5) {
     let num = i;
@@ -8,4 +8,4 @@ export function zeros(n) {
     }
   }
   return result;
-}
+};

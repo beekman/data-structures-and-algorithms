@@ -1,4 +1,4 @@
-const { AnimalQueue, Dog, Cat } = require('./fifo-animal-shelter');
+const { AnimalQueue, Dog, Cat } = require('./fifoAnimalShelter');
 
 describe('AnimalShelter class', () => {
   it('getEither should return the first animal of either type', () => {
