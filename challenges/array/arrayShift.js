@@ -14,6 +14,7 @@ const arrayShift = (array, value) => {
   }
   return newArray;
 };
+
 const arrayRemoveMiddle = (array) => {
   const newArray = [];
   const midIndex = Math.floor((array.length) / 2);
@@ -27,4 +28,5 @@ const arrayRemoveMiddle = (array) => {
   }
   return newArray;
 };
+
 module.exports = { arrayShift, arrayRemoveMiddle };
