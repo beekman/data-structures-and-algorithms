@@ -1,5 +1,6 @@
 const { mergeLists } = require('./llMerge');
 const { LinkedList } = require('./linkedList');
+
 describe('linked list merge function', () => {
   it('should take two linked lists and zipper merge them such that nodes alternate, and return the unified linked list', () => {
     const linkedList1 = new LinkedList();

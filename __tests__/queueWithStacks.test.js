@@ -1,4 +1,4 @@
-const { PseudoQueue } = require('../challenges/queueWithStacks/queue-with-stacks.js');
+const { PseudoQueue } = require('../challenges/queues/queueWithStacks');
 let queue;
 
 queue = new PseudoQueue();
@@ -22,7 +22,7 @@ describe('PseudoQueue', () => {
     queue.enqueue(6);
     expect(queue.dequeue()).toEqual(1);
   });
-  
+
   it('returns the fourth element in the queue after several items are enqueued and dequeued', () => {
     queue.enqueue(1);
     queue.enqueue(2);

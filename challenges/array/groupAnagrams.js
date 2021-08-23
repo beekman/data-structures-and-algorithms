@@ -28,3 +28,5 @@ const groupAnagrams = (strs) => {
   // return the hash table values for each key as an array of arrays
   return Object.values(groups);
 };
+
+module.exports = { groupAnagrams };
