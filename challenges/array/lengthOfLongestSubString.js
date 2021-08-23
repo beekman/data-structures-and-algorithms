@@ -1,6 +1,6 @@
 const lengthOfLongestSubstring = s => {
   const letters = s.split('');
-  let max = 0, start = 0;
+  let max = 0;
   let result = new Map();
 
   for(let i = 0; i < letters.length; i++) {

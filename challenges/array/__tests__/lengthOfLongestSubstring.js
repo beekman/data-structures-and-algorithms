@@ -1,3 +1,10 @@
+/*
+Given a string s, find the length of the longest substring without repeating characters.
+*/
+/**
+ * @param {string} s
+ * @return {number}
+ */
 const { lengthOfLongestSubstring } = require('../lengthOfLongestSubString');
 
 describe('returns the correct lengths for string inputs', () => {
