@@ -1,4 +1,12 @@
 /**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
  * Given the head of a linked list, determine if the
  * linked list has a cycle in it.
  */
@@ -7,7 +15,7 @@
  * @return {boolean}
  */
 
-const hasCycle = (head) => {
+const hasCycle = head => {
   let history = new Set;
   while(head != null) {
     if(history.has(head)) return true;
