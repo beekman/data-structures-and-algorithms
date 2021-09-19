@@ -1,4 +1,4 @@
-const { groupAnagrams } = require('../groupAnagrams');
+const { groupAnagrams } = require('../challenges/array/groupAnagrams');
 
 describe('groupAnagrams', () => {
   it('should return an array of arrays for each anagram group', () => {

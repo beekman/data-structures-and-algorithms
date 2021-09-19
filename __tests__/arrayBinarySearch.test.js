@@ -1,4 +1,4 @@
-const { BinarySearch } = require('../arrayBinarySearch');
+const { BinarySearch } = require('../challenges/array/arrayBinarySearch');
 
 describe('tests array search', () => {
 
