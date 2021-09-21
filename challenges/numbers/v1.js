@@ -13,8 +13,5 @@ const primeNumbers = (n) => {
 
     i += 1;
   }
-  console.log(primes);
   return primes;
 };
-
-primeNumbers(5);
