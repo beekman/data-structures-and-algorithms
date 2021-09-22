@@ -7,6 +7,6 @@ Given a string s consisting of some words separated by some number of spaces, re
  */
 
 const lengthOfLastWord = s => {
-  const words = s.split(' ');
+  const words = s.trim().split(' ');
   return words[words.length - 1].length;
 };
