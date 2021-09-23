@@ -1,4 +1,4 @@
-const { PseudoQueue } = require('../challenges/queues/queueWithStacks');
+const { PseudoQueue } = require('../queues/queueWithStacks');
 let queue;
 
 queue = new PseudoQueue();

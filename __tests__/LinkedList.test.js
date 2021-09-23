@@ -1,4 +1,4 @@
-const { LinkedList } = require('../challenges/linkedList/LinkedList');
+const { LinkedList } = require('../linkedList/LinkedList');
 
 describe('should return true if a value exists within a linked list', () => {
   it('should append a new Node with a given value at the end of the list', () => {
