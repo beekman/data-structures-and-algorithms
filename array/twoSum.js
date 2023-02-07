@@ -4,16 +4,13 @@
  * @return {number[]}
  */
 const twoSum = (nums, target) => {
-  let numMap = {};
-
-  for(let num in nums) {
-    let num2 = target - nums[num];
-    if(num2 in numMap) {
-      let results = [];
-      results.push(nums.indexOf(num2), num);
-      return results;
+    let numObj = {};
+    for (let i = 0; i < nums.length; i++) {
+        //find the number which would equal the target when added to this
+        let complement = target - nums[i];
+        if (numObj[complement] !== undefined) {
+            return [numObj[complement], i];
+        }
+        numObj[nums[i]] = i;
     }
-    numMap[nums[num]] = num;
-  }
-  return null;
-};
+}
