@@ -8,8 +8,6 @@ Repeat the process until the number equals 1 (where it will stay), or it loops e
 Those numbers for which this process ends in 1 are happy.
 Return true if n is a happy number, and false if not.
 
-
-
 Example 1:
 
 Input: n = 19
@@ -29,11 +27,21 @@ Output: false
  * @param {number} n
  * @return {boolean}
  */
-const isHappy = n => {
-    let history = new Map();
-    while (n !== 1 && !history.has(n)) {
-        history.set(n, true);
-        n = String(n).split('').reduce((acc, cur) => acc + Math.pow(cur, 2), 0);
+function getSumOfSquares(n) {
+    let sum = 0;
+    while (n > 0) {
+        const digit = n % 10;
+        sum += digit * digit;
+        n = Math.floor(n / 10);
+    }
+    return sum;
+}
+
+function isHappy(n) {
+    const seen = new Set();
+    while (n !== 1 && !seen.has(n)) {
+        seen.add(n);
+        n = getSumOfSquares(n);
     }
     return n === 1;
-};
+}
