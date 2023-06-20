@@ -11,26 +11,16 @@ For example, the average of four elements 2, 3, 1, and 5 is (2 + 3 + 1 + 5) / 4 
  * @return {number[]}
  */
 const getAverages = (nums, k) => {
-    const n = nums.length;
-    const avgs = new Array(n).fill(-1); // Initialize avgs array with -1
-
-    for (let i = 0; i < n; i++) {
-        let sum = 0;
-        let count = 0;
-
-        // Calculate the sum of elements within the k-radius range
-        for (let j = i - k; j <= i + k; j++) {
-            if (j >= 0 && j < n) {
-                sum += nums[j];
-                count++;
-            }
-        }
-
-        // Calculate the average if there are enough elements in the range
-        if (count >= 2 * k + 1) {
-            avgs[i] = Math.floor(sum / (2 * k + 1));
+    const twoK = 2 * k;
+    const windowSize = twoK + 1;
+    const result = [...nums].fill(-1);
+    let sum = 0;
+    for (let i = 0; i < nums.length; i++) {
+        sum += nums[i];
+        if (i >= twoK) {
+            result[i - k] = Math.floor(sum / windowSize);
+            sum -= nums[i - twoK];
         }
     }
-
-    return avgs;
+    return result;
 };

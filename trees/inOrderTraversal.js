@@ -1,6 +1,3 @@
-//Given the root of a binary tree, return the inorder traversal of its nodes' values.
-//Input: root = [1,null,2,3]
-//Output: [1,3,2]
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -13,20 +10,18 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-const inorderTraversal = (root) => {
-    let stack = [];
-    let values = [];
-    let current= root;
-
-    while (current || stack.length !== 0){
-        while(current){
-            stack.push(current)
-            current = current.left
+const inorderTraversal = root => {
+    const stack = [];
+    const inOrderTraversal = [];
+    while (root || stack.length !== 0) {
+        while (root) {
+            stack.push(root);
+            root = root.left;
         }
-        current = stack.pop()
-        values.push(current.val)
-        current = current.right
+        root = stack.pop();
+        inOrderTraversal.push(root.val);
+        root = root.right;
     }
-    return values
 
+    return inOrderTraversal;
 };
