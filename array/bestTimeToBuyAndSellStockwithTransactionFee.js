@@ -22,6 +22,7 @@ Output: 6
  * @param {number} fee
  * @return {number}
  */
+for
 const maxProfit = (prices, fee) => {
     let d_ik0 = 0;
     let d_ik1 = -Infinity;
