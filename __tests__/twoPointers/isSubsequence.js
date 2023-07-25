@@ -4,13 +4,12 @@
  * @return {boolean}
  */
 const isSubsequence = (s, t) => {
-    if (s.length > t.length) return false;
-    let subsequence = 0;
-
-    for (let i = 0; i < t.length; i++) {
-        if (s[subsequence] === t[i]) {
-            subsequence++;
+    let subIndex = 0, stringIndex = 0;
+    while (stringIndex < t.length) {
+        if (s[subIndex] === t[stringIndex]) {
+            subIndex++;
         }
+        stringIndex++;
     }
-    return subsequence === s.length;
+    return subIndex === s.length ? true : false;
 };
