@@ -19,7 +19,7 @@ var hasCycle = function(head) {
     //Create a slow and fast pointer positioned at the head
     let slow = head, fast = head;
     //while there are non-null for a pointer, it's a potential cycle.
-    //the fast pointer will resolve faster.
+    //Evaluate the fast pointer because it will detect non-cycles faster.
     while (fast && fast.next) {
         //advance the pointers
         slow = slow.next;
