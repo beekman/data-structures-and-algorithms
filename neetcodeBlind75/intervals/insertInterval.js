@@ -42,12 +42,3 @@ const mergeIntervals = (intervals, newInterval, index) => {
 
     return index;
 };
-
-
-
-
-
-
-
-
-
