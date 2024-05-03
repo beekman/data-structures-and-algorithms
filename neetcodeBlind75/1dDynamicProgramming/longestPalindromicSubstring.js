@@ -2,41 +2,39 @@
  * @param {string} s
  * @return {string}
  */
-const longestPalindrome = s => {
-    const n = s.length;
-    if (n === 0)
-        return '';
-    if (n === 1)
-        return s;
+var longestPalindrome = (s) => {
+    const isEmpty = s.length === 0;
+    if (isEmpty) return '';
 
-    let minStart = 0, maxLen = 0;
+    const [left, right] = search(s);/* Time O(N * N) */
 
-    let i = 0;
-    while (i < n) {
-        if (n - i < maxLen / 2)
-            break;
+    return s.slice(left, (right + 1));/* Time O(N * N) | Ignore Auxillary Space (N) */
+}
 
-        let l = i, r = i;
+const search = (s, left = 0, right = 0) => {
+    for (let index = 0; index < s.length; index++) {/* Time O(N) */
+        const len1 = getLength(s, index, index);        /* Time O(N) */
+        const len2 = getLength(s, index, (index + 1));  /* Time O(N) */
+        const [length, window] = [(Math.max(len1, len2)), (right - left)];
 
-        // Find the center of the palindrome
-        while (r < n - 1 && s[r] === s[r + 1])
-            r++;
+        const canSkip = (length <= window);
+        if (canSkip) continue;
 
-        // Update the next starting point
-        i = r + 1;
-
-        // Expand around the center to find the longest palindrome
-        while (l > 0 && r < n - 1 && s[l - 1] === s[r + 1]) {
-            l--;
-            r++;
-        }
-
-        const newLen = r - l + 1;
-        if (newLen > maxLen) {
-            maxLen = newLen;
-            minStart = l;
-        }
+        left = (index - ((length - 1) >> 1));
+        right = (index + (length >> 1));
     }
 
-    return s.substring(minStart, minStart + maxLen);
+    return [left, right];
+}
+
+const getLength = (s, left, right) => {
+    const canExpand = () => ((0 <= left) && (right < s.length));
+    const isSame = () => (s[left] === s[right]);
+
+    const isPalindrome = () => (canExpand() && isSame());
+    while (isPalindrome()) {left--; right++;}/* Time O(N) */
+
+    const window = ((right - left) - 1);
+
+    return window;
 }
