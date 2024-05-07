@@ -6,7 +6,6 @@ var pacificAtlantic = function(heights) {
     const rows = heights.length, cols = heights[0].length;
     let pac = new Set(), atl = new Set();
 
-    // Depth First Search (DFS) function
     const dfs = (r, c, visit, prevHeight) => {
         const key = `${r},${c}`;
         // Check if already visited or out of bounds or lower than previous height
