@@ -1,28 +1,21 @@
-/**
-* DP - Bottom Up
-* Array - Tabulation
-* Time O(ROWS * COLS) | Space O(COLS)
-* https://leetcode.com/problems/unique-paths/
-* @param {number} m
-* @param {number} n
-* @return {number}
-*/
-const uniquePaths = (row, col) => {
-    const tabu = initTabu(col);/* Time O(COLS)        | Space O(COLS) */
+class Solution {
+    /**
+     * @param {number} m
+     * @param {number} n
+     * @return {number}
+     */
+    uniquePaths(m, n) {
+        // Create a 2D array with m rows and n columns filled with 1's
+        const dp = Array(m).fill().map(() => Array(n).fill(1));
 
-    search(row, col, tabu);    /* Time O(ROWS * COLS) | Space O(COLS) */
-
-    return tabu[(col - 1)];
-};
-
-const initTabu = (col) => new Array(col).fill(1); /* Time O(COLS) | Space O(COLS) */
-
-const search = (row, col, tabu) => {
-    for (let _row = 1; (_row < row); _row++) {/* Time O(ROWS) */
-        for (let _col = 1; (_col < col); _col++) {/* Time O(COLS) */
-            const prev = tabu[(_col - 1)];
-
-            tabu[_col] += prev;                     /* Space O(COLS) */
+        // Fill the dp table
+        for (let i = 1; i < m; i++) {
+            for (let j = 1; j < n; j++) {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
         }
+
+        // The bottom-right corner will have the number of unique paths
+        return dp[m - 1][n - 1];
     }
 }
